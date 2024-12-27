@@ -1,4 +1,7 @@
-# Myapp
+# Angular calculator App
+
+![image](https://github.com/user-attachments/assets/fb7287b4-2347-4f64-9248-1b7b277be137)
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
 
