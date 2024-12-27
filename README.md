@@ -1,6 +1,6 @@
 # Angular calculator App
 
-![image](https://github.com/user-attachments/assets/fb7287b4-2347-4f64-9248-1b7b277be137)
+![image](https://github.com/user-attachments/assets/022fd0b9-92ce-44e4-9621-f6d8c32db901)
 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
