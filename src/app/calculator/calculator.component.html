@@ -1,25 +1,39 @@
 <div class="calculator">
+    <!-- Display -->
     <div class="output">
-      <div class="previous-input">{{ previousInput() }} {{ operation() }}</div>
+      <div class="history">
+        <p *ngFor="let item of history()">{{ item }}</p>
+      </div>
       <div class="current-input">{{ currentInput() }}</div>
     </div>
-    <button class="span-two" (click)="clear()">AC</button>
+  
+    <!-- Advanced Buttons -->
+    <button (click)="appendInput('(')">(</button>
+    <button (click)="appendInput(')')">)</button>
+    <button (click)="appendInput('%')">%</button>
+    <button (click)="clear()">AC</button>
+  
+    <!-- Basic Buttons -->
+    <button (click)="appendInput('7')">7</button>
+    <button (click)="appendInput('8')">8</button>
+    <button (click)="appendInput('9')">9</button>
+    <button (click)="appendInput('/')">÷</button>
+  
+    <button (click)="appendInput('4')">4</button>
+    <button (click)="appendInput('5')">5</button>
+    <button (click)="appendInput('6')">6</button>
+    <button (click)="appendInput('*')">×</button>
+  
+    <button (click)="appendInput('1')">1</button>
+    <button (click)="appendInput('2')">2</button>
+    <button (click)="appendInput('3')">3</button>
+    <button (click)="appendInput('-')">−</button>
+  
+    <button (click)="appendInput('.')">.</button>
+    <button (click)="appendInput('0')">0</button>
+    <button (click)="compute()">=</button>
+    <button (click)="appendInput('+')">+</button>
+  
     <button (click)="delete()">DEL</button>
-    <button (click)="chooseOperation('/')">÷</button>
-    <button (click)="appendNumber('7')">7</button>
-    <button (click)="appendNumber('8')">8</button>
-    <button (click)="appendNumber('9')">9</button>
-    <button (click)="chooseOperation('*')">×</button>
-    <button (click)="appendNumber('4')">4</button>
-    <button (click)="appendNumber('5')">5</button>
-    <button (click)="appendNumber('6')">6</button>
-    <button (click)="chooseOperation('-')">−</button>
-    <button (click)="appendNumber('1')">1</button>
-    <button (click)="appendNumber('2')">2</button>
-    <button (click)="appendNumber('3')">3</button>
-    <button (click)="chooseOperation('+')">+</button>
-    <button (click)="appendNumber('0')">0</button>
-    <button (click)="appendNumber('.')">.</button>
-    <button class="span-two" (click)="compute()">=</button>
   </div>
   
