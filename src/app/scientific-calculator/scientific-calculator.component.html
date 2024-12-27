@@ -1,0 +1,45 @@
+<div class="scientific-calculator">
+  <div class="display">
+    <div class="history">{{ history() }}</div>
+    <div class="current-input">{{ currentInput() }}</div>
+  </div>
+
+  <!-- Scientific Functions -->
+  <div class="button-row scientific-functions">
+    <button *ngFor="let func of ['sin', 'cos', 'tan', 'log']" (click)="appendInput(func + '(')">
+      {{ func }}
+    </button>
+    <button (click)="appendInput('π')">π</button>
+    <button (click)="appendInput('e')">e</button>
+  </div>
+
+  <!-- Advanced Operations -->
+  <div class="button-row advanced-operations">
+    <button (click)="appendInput('^')">xⁿ</button>
+    <button (click)="appendInput('sqrt(')">√</button>
+    <button (click)="appendInput('(')">(</button>
+    <button (click)="appendInput(')')">)</button>
+  </div>
+
+  <!-- Number Pad -->
+  <div class="button-row number-pad">
+    <button *ngFor="let num of ['7', '8', '9', '/']" (click)="appendInput(num)">
+      {{ num }}
+    </button>
+    <button *ngFor="let num of ['4', '5', '6', '*']" (click)="appendInput(num)">
+      {{ num }}
+    </button>
+    <button *ngFor="let num of ['1', '2', '3', '-']" (click)="appendInput(num)">
+      {{ num }}
+    </button>
+    <button *ngFor="let num of ['0', '.', '=', '+']" (click)="appendInput(num)">
+      {{ num }}
+    </button>
+  </div>
+
+  <!-- Control Buttons -->
+  <div class="button-row control-buttons">
+    <button class="clear" (click)="clear()">AC</button>
+    <button class="delete" (click)="delete()">DEL</button>
+  </div>
+</div>

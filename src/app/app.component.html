@@ -1,2 +1,15 @@
+<div class="calculator-container" [ngClass]="{ 'dark-mode': isDarkMode() }">
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" (click)="toggleDarkMode()">
+    {{ isDarkMode() ? 'Light Mode' : 'Dark Mode' }}
+  </button>
 
-<router-outlet />
+  <!-- Toggle Button -->
+  <button class="toggle-mode" (click)="toggleCalculatorMode()">
+    Switch to {{ isScientificMode() ? 'Simple' : 'Scientific' }} Calculator
+  </button>
+
+  <!-- Load Appropriate Calculator -->
+  <app-calculator *ngIf="!isScientificMode()"></app-calculator>
+  <app-scientific-calculator *ngIf="isScientificMode()"></app-scientific-calculator>
+</div>

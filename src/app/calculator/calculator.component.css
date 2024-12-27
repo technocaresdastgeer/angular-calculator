@@ -1,51 +1,112 @@
-.calculator {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    width: 400px;
-    margin: auto;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  
-  .output {
-    grid-column: span 4;
-    background: #1e1e2f;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 20px;
-    border-radius: 10px;
-    word-break: break-word;
-    text-align: right;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .history {
-    font-size: 0.8rem;
-    color: #888;
-  }
-  
-  button {
-    background: linear-gradient(145deg, #222, #333);
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease-in-out;
+.simple-calculator {
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.display {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: right;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.display .current-input {
+  color: #000;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+button {
+  flex: 1;
+  margin: 5px;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.number-pad button {
+  background: #28a745;
+}
+
+.control-buttons button {
+  background: #dc3545;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.clear {
+  background: #ffc107;
+  color: black;
+}
+
+.delete {
+  background: #17a2b8;
+}
+
+@media (max-width: 600px) {
+  .simple-calculator {
     padding: 15px;
+    max-width: 100%;
   }
-  
-  button:hover {
-    background: linear-gradient(145deg, #333, #444);
-    transform: scale(1.05);
+
+  .display {
+    font-size: 1.2rem;
   }
-  
-  button:active {
-    transform: scale(0.95);
+
+  .button-row {
+    flex-direction: column;
   }
-  
-  button:nth-child(4n) {
-    background: #f57c00;
+
+  button {
+    font-size: 1rem;
+    margin: 5px 0;
   }
-  
+
+  .number-pad button,
+  .control-buttons button {
+    flex: 1;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .display {
+    font-size: 1.1rem;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
